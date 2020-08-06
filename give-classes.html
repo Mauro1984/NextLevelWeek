@@ -80,37 +80,7 @@
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend>Horários disponiveis</legend>
-          <button id="add-time">+ Novo Horários</button>
-          <div class="schedule-item">
-
-            <div class="select-block">
-              <label for="weekday">Dia da semana</label>
-              <select name="weekday[]" id="weekday" required>
-                <option value="0">Domingo</option>
-                <option value="1">Segunda-feira</option>
-                <option value="2">Terça-feira</option>
-                <option value="3">Quarta-feira</option>
-                <option value="4">Quinta-feira</option>
-                <option value="5">Sexta-feira</option>
-                <option value="6">Sábado</option>
-              </select>
-            </div>
-            <div class="input-block">
-              <label for="time-from">Das</label>
-              <input type="time" name="time-from" required>
-            </div>
-
-            <div class="input-block">
-              <label for="time-to">Até</label>
-              <input type="time" name="time-to" required>
-            </div>
-          </div>
-
-        </fieldset>
-
-        <fieldset>
+        <fieldset id="schedule-items">
           <legend>Horários disponiveis</legend>
           <button id="add-time">+ Novo Horários</button>
           <div class="schedule-item">
@@ -162,8 +132,12 @@
               <input type="time" name="time-to" required>
             </div>
           </div>
-
         </fieldset>
+
+
+
+
+
       </form>
       <footer>
         <p>
