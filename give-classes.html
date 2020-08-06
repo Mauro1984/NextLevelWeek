@@ -79,7 +79,99 @@
             <input type="number" name="cost" id="cost" required>
           </div>
         </fieldset>
+
+        <fieldset>
+          <legend>Horários disponiveis</legend>
+          <button id="add-time">+ Novo Horários</button>
+          <div class="schedule-item">
+
+            <div class="select-block">
+              <label for="weekday">Dia da semana</label>
+              <select name="weekday[]" id="weekday" required>
+                <option value="0">Domingo</option>
+                <option value="1">Segunda-feira</option>
+                <option value="2">Terça-feira</option>
+                <option value="3">Quarta-feira</option>
+                <option value="4">Quinta-feira</option>
+                <option value="5">Sexta-feira</option>
+                <option value="6">Sábado</option>
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="time-from">Das</label>
+              <input type="time" name="time-from" required>
+            </div>
+
+            <div class="input-block">
+              <label for="time-to">Até</label>
+              <input type="time" name="time-to" required>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Horários disponiveis</legend>
+          <button id="add-time">+ Novo Horários</button>
+          <div class="schedule-item">
+
+            <div class="select-block">
+              <label for="weekday">Dia da semana</label>
+              <select name="weekday[]" id="weekday" required>
+                <option value="0">Domingo</option>
+                <option value="1">Segunda-feira</option>
+                <option value="2">Terça-feira</option>
+                <option value="3">Quarta-feira</option>
+                <option value="4">Quinta-feira</option>
+                <option value="5">Sexta-feira</option>
+                <option value="6">Sábado</option>
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="time-from">Das</label>
+              <input type="time" name="time-from" required>
+            </div>
+
+            <div class="input-block">
+              <label for="time-to">Até</label>
+              <input type="time" name="time-to" required>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+
+            <div class="select-block">
+              <label for="weekday">Dia da semana</label>
+              <select name="weekday[]" id="weekday" required>
+                <option value="0">Domingo</option>
+                <option value="1">Segunda-feira</option>
+                <option value="2">Terça-feira</option>
+                <option value="3">Quarta-feira</option>
+                <option value="4">Quinta-feira</option>
+                <option value="5">Sexta-feira</option>
+                <option value="6">Sábado</option>
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="time-from">Das</label>
+              <input type="time" name="time-from" required>
+            </div>
+
+            <div class="input-block">
+              <label for="time-to">Até</label>
+              <input type="time" name="time-to" required>
+            </div>
+          </div>
+
+        </fieldset>
       </form>
+      <footer>
+        <p>
+          <img src="/images/icons/warning.svg" alt="Aviso importante">
+          Importante! <br> Preencha todos os campos
+        </p>
+        <button type="submit" form="create-class">Salvar cadastro</button>
+      </footer>
     </main>
   </div>
 </body>
