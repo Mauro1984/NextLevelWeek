@@ -1,12 +1,11 @@
 const Database = require("./db");
-const createProffy = require("./createproffy");
+const createProffy = require("./createProffy");
 
 Database.then(async (db) => {
   //inserir dados
   proffyValue = {
     name: "Diego Fernandes",
-    avatar:
-      "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
+    avatar: "https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4",
     whatsapp: "111223456789",
     bio:
       "Entusiasta das melhores tecnologias de química avançada.Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.",
@@ -17,9 +16,8 @@ Database.then(async (db) => {
     cost: "20",
     // O proffy id vira pelo banco de dados
   };
-
-  classScheduleValues = [
-    //O classId vira pelo banco de dados
+  //O classId vira pelo banco de dados
+  classScheduleValue = [
     {
       weekday: 1,
       time_from: 720,
@@ -29,8 +27,9 @@ Database.then(async (db) => {
       weekday: 0,
       time_from: 520,
       time_to: 1220,
-    },
+    }
   ];
+
   await createProffy(db, { proffyValue, classValue, classScheduleValue });
 
   // consultar dados

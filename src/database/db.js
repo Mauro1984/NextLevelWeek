@@ -22,7 +22,7 @@ function execute(db) {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       class_id INTEGER,
       weekday INTEGER,
-      time_fron INTEGER,
+      time_from INTEGER,
       time_to INTEGER
     );
   `);

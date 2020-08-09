@@ -1,7 +1,4 @@
-module.exports = async function (
-  db,
-  { proffyValue, classValue, classScheduleValues },
-) {
+module.exports = async function (db, { proffyValue, classValue, classScheduleValues }) {
   // inserir dados na tabela proffys
   const insertedProffy = await db.run(`
     INSERT INTO proffys(
@@ -10,9 +7,9 @@ module.exports = async function (
       whatsapp,
       bio
     ) VALUES(
-      "${proffyValue.name},"
-      "${proffyValue.avatar},"
-      "${proffyValue.whatsapp},"
+      "${proffyValue.name}",
+      "${proffyValue.avatar}",
+      "${proffyValue.whatsapp}",
       "${proffyValue.bio}"
     );
   `);
@@ -21,13 +18,13 @@ module.exports = async function (
 
   // inserir dadso na tabela classes
   const insertedClass = await db.run(`
-INSERT INTO classe(
+INSERT INTO classes(
   subject,
   cost,
   proffy_id
 ) VALUES (
-  "${classValue.subject},"
-  "${classValue.cost},"
+  "${classValue.subject}",
+  "${classValue.cost}",
   "${proffy_id}"
 )
 `);
@@ -35,24 +32,21 @@ INSERT INTO classe(
   const class_id = insertedClass.lastID;
 
   // inserir dados da tabela class_schedule
-  const insertedAllClassScheduleValues = classScheduleValues.map(
-    (classScheduleValue) => {
-      return db.run(`
-  INSERT INTO class_schedule (
-    class_id,
-    weekday,
-    time_fron,
-    time_to
-  ) VALUES (
-    "${class_id},"
-    "${classScheduleValue.weekday},"
-    "${classScheduleValue.time_fron},"
-    "${classScheduleValue.time_to}"
-  );
-`);
-    },
-  );
-
+  const insertedAllClassScheduleValues = classScheduleValues.map((classScheduleValue) => {
+    return db.run(`
+        INSERT INTO class_schedule (
+          class_id,
+          weekday,
+          time_fron,
+          time_to
+        ) VALUES (
+        "${class_id},"
+        "${classScheduleValue.weekday}",
+        "${classScheduleValue.time_from}",
+        "${classScheduleValue.time_to}"
+      );
+    `)
+  })
   // aqui vou executar todos os db.runs() das class_schudules
   await Promise.all(insertedAllClassScheduleValues);
 };
